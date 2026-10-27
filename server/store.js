@@ -1,8 +1,10 @@
 // 数据层：内存 + JSON 文件持久化（零依赖）
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+// 数据目录：优先环境变量 DATA_DIR，否则用系统临时目录（云端容器受限用户也可写）
+const DATA_DIR = process.env.DATA_DIR || path.join(os.tmpdir(), 'tianshu-data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 
 function ensureDir() { if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true }); }
