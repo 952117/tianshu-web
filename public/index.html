@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A1F44" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <title>天枢 TIANSHU · 轻应用</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/icon.svg" alt="TS" class="brand-logo" />
+      <div class="brand-text">
+        <strong>天枢 TIANSHU</strong>
+        <span>低空经济调度网</span>
+      </div>
+    </div>
+    <div class="stat-chip" id="statChip">加载中…</div>
+  </header>
+
+  <main id="view">
+    <!-- 抢单大厅 -->
+    <section class="tab-pane active" data-tab="hall">
+      <h2>抢单大厅</h2>
+      <div id="orderList" class="card-list"></div>
+    </section>
+
+    <!-- 我的任务 -->
+    <section class="tab-pane" data-tab="tasks">
+      <h2>我的任务</h2>
+      <div id="myTasks" class="card-list"></div>
+    </section>
+
+    <!-- 商城 -->
+    <section class="tab-pane" data-tab="mall">
+      <h2>天枢商城 · 农产品上行</h2>
+      <p class="hint">飞手可凭 referralCode 分销赚佣金，供应商 T+3 结算。</p>
+      <div id="productList" class="card-list"></div>
+    </section>
+
+    <!-- 收益解付 -->
+    <section class="tab-pane" data-tab="pay">
+      <h2>收益解付</h2>
+      <div id="payInfo" class="card"></div>
+    </section>
+
+    <!-- 我的 -->
+    <section class="tab-pane" data-tab="me">
+      <h2>我的</h2>
+      <div id="meInfo" class="card"></div>
+    </section>
+
+    <section class="tab-pane" data-tab="cashier">
+      <h2>收银台 · 支付宝 Vibe Pay</h2>
+      <p class="hint">接入支付宝 Vibe Pay：个人也能收款（无需企业/个体户）。沙箱模式可演示全流程，配置密钥后切换真实收款。</p>
+      <div class="card">
+        <h3>我要付款</h3>
+        <div class="row"><span>购买积分 / 服务</span><b>¥1.00</b></div>
+        <button class="act" onclick="payNow()">去支付（沙箱模拟）</button>
+        <div id="payResult" class="hint"></div>
+      </div>
+      <div class="card">
+        <h3>商户收款记录（天枢）</h3>
+        <div id="cashierList"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 Tab -->
+  <nav class="tabbar">
+    <button class="tab active" data-go="hall"><span>🛰️</span>抢单</button>
+    <button class="tab" data-go="tasks"><span>📋</span>任务</button>
+    <button class="tab" data-go="mall"><span>🛒</span>商城</button>
+    <button class="tab" data-go="pay"><span>💰</span>解付</button>
+    <button class="tab" data-go="cashier"><span>💳</span>收银</button>
+    <button class="tab" data-go="me"><span>👤</span>我的</button>
+  </nav>
+
+  <!-- 智能体团队入口 -->
+  <button id="agentFab" class="fab" title="天枢智能体团队">🤖</button>
+
+  <!-- 智能体对话抽屉 -->
+  <div id="agentDrawer" class="drawer hidden">
+    <div class="drawer-head">
+      <strong>天枢智能体团队</strong>
+      <button id="agentClose" class="x">×</button>
+    </div>
+    <div id="agentLog" class="agent-log"></div>
+    <div class="agent-suggest">
+      <button data-q="天枢是做什么的？">天枢是做什么的？</button>
+      <button data-q="怎么赚钱？">怎么赚钱？</button>
+      <button data-q="我想成为飞手，留个电话13800001111">我想成为飞手</button>
+      <button data-q="现在有哪些订单可以接？">有哪些订单？</button>
+    </div>
+    <div class="agent-input">
+      <input id="agentText" placeholder="对智能体说话…" />
+      <button id="agentSend">发送</button>
+    </div>
+    <div class="agent-foot">中枢编排：客服·小枢 / 调度官·天枢 / 星探·天枢</div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
