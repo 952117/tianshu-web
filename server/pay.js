@@ -14,7 +14,9 @@ function loadConfig() {
     privateKey: process.env.ALIPAY_PRIVATE_KEY || '',
     publicKey: process.env.ALIPAY_PUBLIC_KEY || '',
     gateway: process.env.ALIPAY_GATEWAY || 'https://openapi.alipaydev.com/gateway.do',
-    enabled: !!(process.env.ALIPAY_APP_ID && process.env.ALIPAY_PRIVATE_KEY)
+    // 占位值（pending-vibepay 等）视为未配置，避免云端强制填占位值后误入"真实模式"
+    const isPlaceholder = v => !v || /^pending/i.test(v.trim());
+    enabled: !(isPlaceholder(process.env.ALIPAY_APP_ID) || isPlaceholder(process.env.ALIPAY_PRIVATE_KEY))
   };
 }
 
