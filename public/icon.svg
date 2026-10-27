@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1F44"/>
+      <stop offset="1" stop-color="#0B2447"/>
+    </linearGradient>
+    <linearGradient id="ts" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C7D4E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#ts)" stroke-width="9" stroke-linecap="round">
+    <path d="M40 36 L82 92"/>
+    <path d="M88 36 L46 92"/>
+  </g>
+  <circle cx="98" cy="30" r="9" fill="#2E7DF6"/>
+  <text x="64" y="116" font-family="Arial, sans-serif" font-size="16" fill="#9fb3d1" text-anchor="middle" font-weight="bold">TIANSHU</text>
+</svg>
