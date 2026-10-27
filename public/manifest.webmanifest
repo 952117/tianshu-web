@@ -1,0 +1,14 @@
+{
+  "name": "天枢TIANSHU 轻应用",
+  "short_name": "天枢",
+  "description": "全球低空经济操作系统 - 城市级低空调度网与数字底座",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A1F44",
+  "theme_color": "#0A1F44",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
